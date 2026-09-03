@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Shiva Yogi Jotish Kendra{% endblock %}</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#fcf8f2] text-amber-950 font-sans antialiased">
+
+    <!-- Navigation Bar -->
+    <header class="bg-[#2c1b12] text-amber-100 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand -->
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl font-bold tracking-wide text-amber-400">🕉️ Shiva Yogi Jotish Kendra</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium">
+                    <a href="{% url 'home' %}" class="hover:text-amber-400 transition">Home</a>
+                    <a href="{% url 'about' %}" class="hover:text-amber-400 transition">About Us</a>
+                    <a href="{% url 'booking' %}" class="hover:text-amber-400 transition">Booking</a>
+                    <a href="{% url 'blog_list' %}" class="hover:text-amber-400 transition">Blog</a>
+                    <a href="{% url 'contact' %}" class="hover:text-amber-400 transition">Contact Us</a>
+                </nav>
+
+                <!-- Book Consultation Button (Desktop) -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="{% url 'booking' %}" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-md font-semibold text-sm transition shadow">
+                        Book Consultation
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-amber-200 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#22130c] px-4 pt-2 pb-4 space-y-3">
+            <a href="{% url 'home' %}" class="block py-1 hover:text-amber-400 transition">Home</a>
+            <a href="{% url 'about' %}" class="block py-1 hover:text-amber-400 transition">About Us</a>
+            <a href="{% url 'booking' %}" class="block py-1 hover:text-amber-400 transition">Booking</a>
+            <a href="{% url 'blog_list' %}" class="block py-1 hover:text-amber-400 transition">Blog</a>
+            <a href="{% url 'contact' %}" class="block py-1 hover:text-amber-400 transition">Contact Us</a>
+            
+            <div class="pt-2 border-t border-amber-900/50 flex flex-col space-y-2">
+                <a href="{% url 'booking' %}" class="block bg-amber-600 text-center text-white py-2 rounded-md font-semibold">Book Consultation</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Block -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#2c1b12] text-amber-200 pt-12 pb-6 mt-16 border-t border-amber-900">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <h3 class="text-xl font-bold text-amber-400 mb-4">🕉️ Shiva Yogi Jotish Kendra</h3>
+                <p class="text-sm text-amber-300/80 leading-relaxed">
+                    Discover guidance through ancient wisdom, Vedic astrology, and spiritual healing to bring clarity into your life.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="{% url 'home' %}" class="hover:text-amber-400">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="hover:text-amber-400">About Us</a></li>
+                    <li><a href="{% url 'blog_list' %}" class="hover:text-amber-400">Blog Posts</a></li>
+                    <li><a href="{% url 'booking' %}" class="hover:text-amber-400">Consultation Booking</a></li>
+                    <li><a href="{% url 'contact' %}" class="hover:text-amber-400">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Contact Information</h4>
+                <p class="text-sm mb-2"><i class="fa-solid fa-location-dot mr-2"></i> Butwal, Lumbini, Nepal</p>
+                <p class="text-sm mb-2"><i class="fa-solid fa-phone mr-2"></i> +977 9800000000</p>
+                <p class="text-sm"><i class="fa-solid fa-envelope mr-2"></i> info@shivayogi.com</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 border-t border-amber-900/50 pt-6 text-center text-xs text-amber-400/60">
+            &copy; 2026 Shiva Yogi Jotish Kendra. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Simple JS for Mobile Menu Toggle -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

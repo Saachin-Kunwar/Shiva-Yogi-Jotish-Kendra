@@ -1,0 +1,198 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Shiva Yogi Jotish Kendra - Discover Guidance Through Ancient Wisdom{% endblock %}
+
+{% block content %}
+<!-- Hero Section matching the mockup with refined polish -->
+<section class="relative bg-[#2c1b12] text-amber-100 min-h-[85vh] flex items-center overflow-hidden">
+    <!-- Background Image with Cinematic Dark Gradient Overlay -->
+    <div class="absolute inset-0 z-0">
+        <img src="{% static 'images/hero_bg.png' %}" alt="Astrology Consultation" class="w-full h-full object-cover object-center opacity-40 scale-105 transition-transform duration-1000">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#2c1b12] via-[#2c1b12]/85 to-transparent"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+        <div class="max-w-2xl">
+            <span class="inline-block bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full mb-4 tracking-wider uppercase backdrop-blur-sm">
+                ✦ Authentic Vedic Astrology
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1] text-amber-100">
+                Discover Guidance Through <span class="text-amber-400">Ancient Wisdom</span>
+            </h1>
+            <p class="text-base sm:text-lg text-amber-200/90 mb-8 leading-relaxed font-light">
+                Nepal baadi astrology ra Vedic astrology bata anuhari chha, astrology ra spiritual healing bata aapno jeevan ma clarity, santosh, ra shanti prapta garnuhos.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="{% url 'booking' %}" class="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-medium px-7 py-3.5 rounded-xl transition-all duration-300 shadow-xl shadow-amber-900/40 text-sm sm:text-base flex items-center space-x-2 border border-amber-500/20">
+                    <span>Book a Consultation</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <a href="#services" class="border border-amber-400/50 hover:border-amber-400 hover:bg-amber-400/10 text-amber-200 font-medium px-7 py-3.5 rounded-xl transition-all duration-300 text-sm sm:text-base backdrop-blur-sm">
+                    Explore Our Services
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trusted Banner -->
+<section class="bg-gradient-to-r from-amber-950/30 via-amber-900/10 to-amber-950/30 py-6 border-y border-amber-200/40 text-center backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-center space-x-3 text-amber-900">
+        <i class="fa-solid fa-shield-halved text-amber-600 text-lg"></i>
+        <h2 class="text-base sm:text-lg font-bold tracking-wide">Trusted Astrology & Spiritual Guidance</h2>
+    </div>
+</section>
+
+<!-- About Preview Section -->
+<section class="max-w-7xl mx-auto px-4 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center bg-gradient-to-br from-white to-amber-50/50 p-8 sm:p-12 rounded-3xl shadow-xl shadow-amber-950/5 border border-amber-100">
+        <div>
+            <span class="text-xs uppercase tracking-widest text-amber-700 font-bold mb-2 block bg-amber-100/70 w-max px-3 py-1 rounded-md">Who We Are</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-amber-950 mb-4 tracking-tight">About Preview</h2>
+            <p class="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base">
+                Welcome to Shiva Yogi Jotish Kendra. We provide authentic Vedic astrology, horoscope analysis, and spiritual healing solutions to bring clarity, peace, and direction into your life.
+            </p>
+            <p class="text-gray-600 mb-8 leading-relaxed text-sm sm:text-base">
+                Led by experienced spiritual guides, our mission is to blend ancient wisdom with practical guidance for your career, health, and well-being.
+            </p>
+            <a href="{% url 'about' %}" class="inline-flex items-center space-x-2 bg-amber-900 hover:bg-amber-950 text-amber-100 font-semibold px-6 py-3 rounded-xl transition-all duration-300 text-sm shadow-md shadow-amber-950/20">
+                <span>Learn More</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+        
+        <!-- Guru Photo Section -->
+        <div class="flex justify-center">
+            <div class="relative w-full max-w-sm h-80 sm:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-amber-200/80 bg-amber-900/10 group">
+                <img src="{% static 'images/guru.jpg' %}" alt="Shiva Yogi Guru" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 inset-x-0 p-6 text-center">
+                    <span class="text-amber-300 font-bold text-base tracking-wide">Shiva Yogi Guru</span>
+                    <p class="text-xs text-amber-100/80 font-light mt-0.5">Chief Astrologer & Spiritual Guide</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services / Astrology Introduction Section -->
+<section id="services" class="max-w-7xl mx-auto px-4 py-20 bg-amber-50/60 rounded-3xl my-8 border border-amber-200/60 shadow-sm">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest text-amber-700 font-bold mb-2 block bg-amber-200/50 w-max mx-auto px-3 py-1 rounded-md">Our Offerings</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-amber-950 mb-3 tracking-tight">Services & Astrology Introduction</h2>
+        <p class="text-gray-600 text-sm sm:text-base">Explore our specialized spiritual programs, rituals, and astrological consultations managed directly by experts.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {% for program in programs %}
+        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-amber-100 flex flex-col items-center text-center group">
+            <div class="w-16 h-16 bg-amber-100 group-hover:bg-amber-600 text-amber-800 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl mb-6 transition-colors duration-300 shadow-inner">
+                <i class="{{ program.icon_class|default:'fa-solid fa-star' }}"></i>
+            </div>
+            <h3 class="text-xl font-bold text-amber-950 mb-3">{{ program.title }}</h3>
+            <p class="text-gray-600 text-sm mb-6 leading-relaxed flex-grow">{{ program.description }}</p>
+            <a href="{% url 'booking' %}" class="inline-flex items-center space-x-1.5 text-amber-700 font-semibold text-sm hover:text-amber-900 transition-colors">
+                <span>Book Service</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+        {% empty %}
+        <div class="col-span-3 text-center py-12 bg-white rounded-2xl border border-dashed border-amber-300 shadow-sm">
+            <p class="text-gray-500 mb-2 font-medium">No programs found.</p>
+            <a href="/admin/programs/program/add/" class="text-amber-700 font-bold text-sm hover:underline">Add programs from Django Admin panel &rarr;</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-amber-950 mb-4 tracking-tight">Why Choose Us</h2>
+        <p class="text-gray-600 max-w-xl mx-auto text-sm sm:text-base mb-16">Dedicated to offering authentic astrological accuracy and confidential guidance.</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition border border-amber-100 text-left">
+                <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center text-xl mb-6 shadow-sm">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <h4 class="font-bold text-amber-950 text-lg mb-2">Experienced Consultation</h4>
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">Years of profound knowledge in Vedic astrology and traditional readings.</p>
+            </div>
+            <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition border border-amber-100 text-left">
+                <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center text-xl mb-6 shadow-sm">
+                    <i class="fa-solid fa-book-tanakh"></i>
+                </div>
+                <h4 class="font-bold text-amber-950 text-lg mb-2">Traditional Vedic Astrology</h4>
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">Authentic calculations based on ancient Nepali and Vedic scriptures.</p>
+            </div>
+            <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition border border-amber-100 text-left">
+                <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center text-xl mb-6 shadow-sm">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <h4 class="font-bold text-amber-950 text-lg mb-2">Personalized Guidance</h4>
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">Tailored solutions and gemstones recommendation specific to your birth chart.</p>
+            </div>
+            <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition border border-amber-100 text-left">
+                <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center text-xl mb-6 shadow-sm">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h4 class="font-bold text-amber-950 text-lg mb-2">Confidential Consultation</h4>
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">Your personal details and consultations are kept completely secure and private.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dynamic Blog Preview Section -->
+<section class="max-w-7xl mx-auto px-4 py-20 border-t border-amber-200/60">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-4">
+        <div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-amber-950 tracking-tight">Blog Preview</h2>
+            <p class="text-gray-600 text-sm sm:text-base mt-2">Latest articles and insights written by our spiritual experts.</p>
+        </div>
+        <a href="{% url 'blog_list' %}" class="bg-amber-900 hover:bg-amber-950 text-amber-100 px-6 py-3 rounded-xl text-sm font-semibold transition shadow-md shadow-amber-950/20 inline-flex items-center space-x-2">
+            <span>View All Posts</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {% for post in recent_posts %}
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-amber-100 overflow-hidden flex flex-col group">
+            {% if post.image %}
+            <div class="h-52 overflow-hidden relative">
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            {% endif %}
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs text-amber-700 font-semibold mb-2 block tracking-wider uppercase">{{ post.created_at|date:"F d, Y" }}</span>
+                <h3 class="text-xl font-bold text-amber-950 mb-3 group-hover:text-amber-700 transition-colors">{{ post.title }}</h3>
+                <p class="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">{{ post.content|truncatewords:15 }}</p>
+                <a href="{{ post.get_absolute_url }}" class="inline-flex items-center space-x-1.5 text-amber-700 font-semibold text-sm hover:text-amber-900 transition-colors">
+                    <span>Read More</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-gray-500 col-span-3 text-center py-12 bg-white rounded-2xl border border-dashed border-amber-300">No blog posts available right now.</p>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="bg-gradient-to-r from-[#2c1b12] via-[#3a2419] to-[#2c1b12] text-amber-100 py-20 text-center relative overflow-hidden my-12 rounded-3xl max-w-7xl mx-auto px-4 shadow-2xl border border-amber-900/50">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    
+    <div class="relative z-10 max-w-3xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-4 tracking-tight">Ready to Begin Your Consultation?</h2>
+        <p class="text-amber-200/80 text-base sm:text-lg mb-8 leading-relaxed">Connect with expert astrologers to uncover your destiny, resolve life challenges, and find inner peace.</p>
+        <a href="{% url 'booking' %}" class="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-bold px-9 py-4 rounded-xl shadow-xl shadow-amber-900/40 transition-all duration-300 inline-flex items-center space-x-2 text-base border border-amber-500/30">
+            <span>Book Consultation Now</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+    </div>
+</section>
+{% endblock %}

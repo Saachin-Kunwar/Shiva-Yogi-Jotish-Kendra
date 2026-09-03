@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Blog - Shiva Yogi Jotish Kendra{% endblock %}
+
+{% block content %}
+<!-- Page Header Banner -->
+<section class="bg-gradient-to-r from-[#2c1b12] via-[#3a2419] to-[#2c1b12] text-amber-100 py-16 text-center relative overflow-hidden shadow-md">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4">
+        <span class="inline-block bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full mb-3 tracking-wider uppercase backdrop-blur-sm">
+            ✦ Spiritual Insights
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-amber-400 tracking-tight">Astrological & Spiritual Blog</h1>
+        <p class="text-amber-200/80 text-sm sm:text-base mt-3 max-w-2xl mx-auto font-light">
+            Explore latest articles, rituals, festival significance, and expert astrological insights.
+        </p>
+    </div>
+</section>
+
+<!-- Blog Posts Grid Section -->
+<section class="max-w-7xl mx-auto px-4 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {% for post in posts %}
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-amber-100 overflow-hidden flex flex-col group">
+            {% if post.image %}
+            <div class="h-52 overflow-hidden relative">
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            {% endif %}
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs text-amber-700 font-semibold mb-2 block tracking-wider uppercase">{{ post.created_at|date:"F d, Y" }}</span>
+                <h3 class="text-xl font-bold text-amber-950 mb-3 group-hover:text-amber-700 transition-colors">{{ post.title }}</h3>
+                <p class="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">{{ post.content|truncatewords:15 }}</p>
+                <a href="{{ post.get_absolute_url }}" class="inline-flex items-center space-x-1.5 text-amber-700 font-semibold text-sm hover:text-amber-900 transition-colors">
+                    <span>Read More</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-span-3 text-center py-16 bg-white rounded-3xl border border-dashed border-amber-300 shadow-sm">
+            <div class="w-16 h-16 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 shadow-inner">
+                <i class="fa-solid fa-newspaper"></i>
+            </div>
+            <p class="text-amber-950 font-bold text-lg mb-1">No blog posts found.</p>
+            <p class="text-gray-500 text-sm mb-4">Add new spiritual articles from the Django Admin panel!</p>
+            <a href="/admin/blog/post/add/" class="inline-flex items-center space-x-2 bg-amber-900 text-amber-100 px-6 py-2.5 rounded-xl text-sm font-semibold hover:bg-amber-950 transition shadow">
+                <span>Add Post in Admin</span>
+                <i class="fa-solid fa-plus text-xs"></i>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Book Consultation - Shiva Yogi Jotish Kendra{% endblock %}
+
+{% block content %}
+<!-- Page Header Banner -->
+<section class="bg-gradient-to-r from-[#2c1b12] via-[#3a2419] to-[#2c1b12] text-amber-100 py-16 text-center relative overflow-hidden shadow-md">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4">
+        <span class="inline-block bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full mb-3 tracking-wider uppercase backdrop-blur-sm">
+            ✦ Secure & Confidential
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-amber-400 tracking-tight">Book Your Consultation</h1>
+        <p class="text-amber-200/80 text-sm sm:text-base mt-3 max-w-2xl mx-auto font-light">
+            Select your preferred astrological service and fill up the form below. Our expert guides will reach out to you shortly.
+        </p>
+    </div>
+</section>
+
+<!-- Modern Booking Form Section -->
+<section class="max-w-2xl mx-auto px-4 py-16">
+    <div class="bg-gradient-to-br from-white to-amber-50/50 p-8 sm:p-12 rounded-3xl shadow-xl shadow-amber-950/5 border border-amber-100">
+        
+        <form method="POST" class="space-y-6">
+            {% csrf_token %}
+            
+            {% if form.non_field_errors %}
+            <div class="bg-red-50 border border-red-200 text-red-700 text-sm p-4 rounded-xl">
+                {{ form.non_field_errors }}
+            </div>
+            {% endif %}
+
+            {% for field in form %}
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-amber-900 mb-2">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}
+                    <p class="text-xs text-gray-500 mt-1">{{ field.help_text }}</p>
+                {% endif %}
+                {% if field.errors %}
+                    <span class="text-xs text-red-600 font-medium mt-1 block">{{ field.errors.0 }}</span>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+            <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold py-4 rounded-xl transition-all duration-300 shadow-xl shadow-amber-900/30 text-base border border-amber-500/20 flex items-center justify-center space-x-2 mt-8">
+                <span>Submit Booking Request</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+        </form>
+
+        <div class="mt-8 text-center border-t border-amber-200/60 pt-6">
+            <p class="text-xs text-gray-500 flex items-center justify-center space-x-1.5">
+                <i class="fa-solid fa-lock text-amber-700"></i>
+                <span>Your personal data and consultation details are 100% secure and private.</span>
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
